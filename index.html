@@ -1,47 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .box {
-            border: 2px solid black;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        .header {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주기율표</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  .element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  .element:hover {
+    background-color: #f0f0f0;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
 </head>
-<body class="bg-gray-100">
-    <div class="container">
-        <div class="box">
-            <div class="header">Hello, World!</div>
-        </div>
-        <div class="box">
-            <!-- Placeholder for future content -->
-        </div>
-        <div class="flex justify-between mt-4">
-            <div class="box w-1/2 mr-2">
-                <!-- Placeholder for future content -->
-            </div>
-            <div class="box w-1/2 ml-2">
-                <!-- Placeholder for future content -->
-            </div>
-        </div>
-    </div>
+<body class="bg-white text-gray-800">
+<div class="container mx-auto px-4">
+  <h1 class="text-center text-3xl font-bold my-8">주기율표</h1>
+  <div class="grid grid-cols-18 gap-2">
+    <!-- Placeholder for elements -->
+    <div class="element" onclick="openModal('Hydrogen', 'H', 1)">H</div>
+    <!-- More elements should be added here -->
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="elementModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="elementName">Element Name</h2>
+    <p id="elementSymbol">Symbol</p>
+    <p id="atomicNumber">Atomic Number</p>
+  </div>
+</div>
+
+<script>
+function openModal(name, symbol, number) {
+  document.getElementById('elementName').innerText = name;
+  document.getElementById('elementSymbol').innerText = symbol;
+  document.getElementById('atomicNumber').innerText = 'Atomic Number: ' + number;
+  document.getElementById('elementModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('elementModal').style.display = 'none';
+}
+</script>
 </body>
 </html>
