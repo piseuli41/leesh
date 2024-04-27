@@ -3,37 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, World!</title>
+    <title>Hello World Page</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Arial', sans-serif;
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .box {
+            border: 2px solid black;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .header {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
-    <div class="container mx-auto px-4">
-        <header class="text-6xl font-bold text-center py-12">
-            Hello, World!
-        </header>
-        <main class="grid grid-cols-3 gap-4 mb-6">
-            <div class="col-span-2 bg-white p-4 shadow rounded">
-                Main content area
+    <div class="container">
+        <div class="box">
+            <div class="header">Hello, World!</div>
+        </div>
+        <div class="box">
+            <!-- Placeholder for future content -->
+        </div>
+        <div class="flex justify-between mt-4">
+            <div class="box w-1/2 mr-2">
+                <!-- Placeholder for future content -->
             </div>
-            <div class="space-y-4">
-                <div class="bg-white p-4 shadow rounded h-24">Box 1</div>
-                <div class="bg-white p-4 shadow rounded h-48">Box 2</div>
-                <div class="bg-white p-4 shadow rounded h-12">Box 3</div>
+            <div class="box w-1/2 ml-2">
+                <!-- Placeholder for future content -->
             </div>
-        </main>
-        <footer class="grid grid-cols-2 gap-4">
-            <div class="bg-white p-4 shadow rounded">
-                Footer section 1
-            </div>
-            <div class="bg-white p-4 shadow rounded">
-                Footer section 2
-            </div>
-        </footer>
+        </div>
     </div>
 </body>
 </html>
