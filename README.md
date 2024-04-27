@@ -1,2 +1,2 @@
 # leesh
-Hello, world!
+https://git.leesh.me/
